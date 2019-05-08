@@ -8,8 +8,10 @@ import android.view.View;
 import androidx.appcompat.widget.Toolbar;
 import io.flutter.androidembedding.as_view.SingleFlutterViewActivity;
 import io.flutter.androidembedding.fullscreen.FullscreenCustomFlutterActivity;
-import io.flutter.androidembedding.fullscreen.FullscreenFlutterActivity;
 import io.flutter.androidembedding.partial_flow.LoginActivity;
+import io.flutter.androidembedding.plugins.alarmmanagerplugin.AlarmManagerPluginActivity;
+import io.flutter.androidembedding.plugins.BasicPluginActivity;
+import io.flutter.androidembedding.plugins.cameraplugin.CameraPluginActivity;
 import io.flutter.androidembedding.single_activity.FragTransitionActivity;
 import io.flutter.androidembedding.single_activity.NavDrawerActivity;
 import io.flutter.androidembedding.single_activity.TabbedActivity;
@@ -95,6 +97,27 @@ public class MainActivity extends AppCompatActivity {
       @Override
       public void onClick(View v) {
         // TODO:
+      }
+    });
+
+    findViewById(R.id.button_basic_plugin).setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent(MainActivity.this, BasicPluginActivity.class));
+      }
+    });
+
+    findViewById(R.id.button_alarm_manager_plugin).setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent(MainActivity.this, AlarmManagerPluginActivity.class));
+      }
+    });
+
+    findViewById(R.id.button_camera_plugin).setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent(MainActivity.this, CameraPluginActivity.class));
       }
     });
   }

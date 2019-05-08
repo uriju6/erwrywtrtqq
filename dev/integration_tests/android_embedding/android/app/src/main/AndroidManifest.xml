@@ -6,8 +6,19 @@
     <application
         android:name=".App"
         android:icon="@mipmap/ic_launcher"
-        android:label="Android Embedding Test"
-        >
+        android:label="Android Embedding Test">
+        <activity
+            android:name=".plugins.BasicPluginActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name=".plugins.cameraplugin.CameraPluginActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name=".plugins.alarmmanagerplugin.AlarmManagerPluginActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity
             android:name=".as_view.SingleFlutterViewActivity"
             android:theme="@style/AppTheme.NoActionBar"
@@ -62,16 +73,16 @@
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".fullscreen.FullscreenCustomFlutterActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+            android:windowSoftInputMode="adjustResize" />
+
+        <service android:name=".plugins.alarmmanagerplugin.AlarmService" />
     </application>
 
 </manifest>
